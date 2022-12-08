@@ -1,0 +1,10 @@
+{"menu": {
+"id": "file",
+"tools": {
+"actions": [
+{"id": "new", "title": "New file"},
+{"id": "open", "title": "Open File"},
+{"id": "close", "title": "Close File"}
+],
+"errors": []
+}}}
