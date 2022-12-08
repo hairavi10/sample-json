@@ -1,5 +1,5 @@
 pipeline {
-    import groovy.json.JsonSlurper;
+    
     agent{ label "MASTER" }    
     stages{
         stage ('Code Download From SCM'){
