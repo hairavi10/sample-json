@@ -1,4 +1,5 @@
-pipeline { 
+pipeline {
+    import groovy.json.JsonSlurper;
     agent{ label "MASTER" }    
     stages{
         stage ('Code Download From SCM'){
@@ -13,8 +14,7 @@ pipeline {
             agent{ label "MASTER" }
             steps{
                 dir('./'){
-                      unstash name: 'sample.json' 
-                      import groovy.json.JsonSlurper;
+                      unstash name: 'sample.json'                     
 
                       def jsonSlurper = new JsonSlurper()
 
