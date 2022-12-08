@@ -14,7 +14,8 @@ pipeline {
             agent{ label "MASTER" }
             steps{
                 dir('./'){
-                      unstash name: 'sample.json'  
+                      unstash name: 'sample.json' 
+                      sh 'json=`cat sample.json | jq '.menu'`
                                                                    
                 }                             
                                 
