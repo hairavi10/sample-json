@@ -10,7 +10,7 @@ pipeline {
         }
         
         stage('Read Json'){
-            agent{ label "ANSIBLE" }
+            agent{ label "MASTER" }
             steps{
                 dir('./'){
                       unstash name: 'sample.json'  
