@@ -1,6 +1,5 @@
 pipeline { 
-    agent{ label "MASTER" }
-    triggers{ pollSCM('* * * * *') }
+    agent{ label "MASTER" }    
     stages{
         stage ('Code Download From SCM'){
             steps{
@@ -15,7 +14,15 @@ pipeline {
             steps{
                 dir('./'){
                       unstash name: 'sample.json' 
-                      sh 'json=`cat sample.json | jq '.menu'`
+                      import groovy.json.JsonSlurper;
+
+                      def jsonSlurper = new JsonSlurper()
+
+                        File fl = new File('./sample.json')
+
+                        // parse(File file) method is available since 2.2.0
+                      def obj = jsonSlurper.parse(fl)
+                        
                                                                    
                 }                             
                                 
