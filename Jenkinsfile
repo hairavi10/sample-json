@@ -16,12 +16,7 @@ pipeline {
                 dir('./'){
                       unstash name: 'sample.json'                     
 
-                      def jsonSlurper = new JsonSlurper()
-
-                        File fl = new File('./sample.json')
-
-                        // parse(File file) method is available since 2.2.0
-                      def obj = jsonSlurper.parse(fl)
+                      env.menu = readJSON(file: "./sample.json").menu
                         
                                                                    
                 }                             
