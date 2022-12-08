@@ -16,7 +16,7 @@ pipeline {
                 dir('./'){
                       unstash name: 'sample.json'                     
 
-                      env.menu = readJSON(file: "./sample.json").menu
+                      def json_output = readJSON file: "./sample.json"
                         
                                                                    
                 }                             
