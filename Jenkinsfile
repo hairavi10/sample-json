@@ -13,10 +13,14 @@ pipeline {
         stage('Read Json'){
             agent{ label "MASTER" }
             steps{
-                dir('./'){
-                      unstash name: 'sample.json'                     
+               sh '''                
+                  
+                     import json
 
-                      def json_output = readJSON file: "./sample.json"
+                     with open('sample.json', 'r') as fcc_file:
+                     fcc_data = json.load(fcc_file)
+                     print(fcc_data)
+                  '''
                         
                                                                    
                 }                             
