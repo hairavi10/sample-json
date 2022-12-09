@@ -6,7 +6,7 @@ pipeline {
             steps{
                 
                 sh 'git clone https://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@github.com//hairavi10/sample-json.git'
-                stash name: 'sample.json', includes: 'sample.json'
+                
             }
         }
         
