@@ -5,7 +5,7 @@ pipeline {
         stage ('Code Download From SCM'){
             steps{
                 
-                sh 'git clone https://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@github.com//hairavi10/sample-json.git'
+                sh 'git clone https://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@github.com/hairavi10/sample-json.git'
                 
             }
         }
