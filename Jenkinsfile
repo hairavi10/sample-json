@@ -14,7 +14,7 @@ pipeline {
             agent{ label "MASTER" }
             steps{
                sh '''                
-                  
+                     python3
                      import json
 
                      with open('sample.json', 'r') as fcc_file:
